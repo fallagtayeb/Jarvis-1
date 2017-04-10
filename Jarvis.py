@@ -5,10 +5,18 @@ import random
 import os
 import time
 from os.path import abspath, exists
+"""
+##########################################
+This project is using bat file .         #
+                                         #
+So it only works on windows plateform !  #
+                                         #
+##########################################
+"""
 
-speech.say("Jarvis is speaking ")
-
-def fun():
+speech.say("Jarvis is speaking.. ")
+#random greeting sentences
+def Greeting():
 	var1=random.choice(("Good morning Sir","Hello","Good To see you"))
 	spoken_text = speech.input()
 	if spoken_text in("Hi","Hello","Hey","Welcome","Good morning","Good afternoon"):
@@ -18,8 +26,8 @@ def fun():
 	else:
 		None
 
-
-def commands():
+#browser commands
+def browser():
 	speech.say("What can I do for you ")
 	les=("Open browser","Open chrome","Open Mozilla","Start browser","Run browser")
 	phrase1=speech.input()
@@ -28,8 +36,8 @@ def commands():
 		if exists(f_path):
 			os.system("browser.bat")
 		break
-		
-def fun1():
+#Date and Time		
+def date():
 	les3=("Date","What's the date","Tell me the date","Show me the date")
 	phrase1=speech.input()
 	for phrase1 in les3:
@@ -39,15 +47,15 @@ def fun1():
 		print a
 		speech.say(a)
 		break
-		
-def fun2():
+#Joke	
+def Joke():
 	les2=("Tell me a joke")
 	phrase3=speech.input()
 	for phrase3 in les2:
 		speech.say("I'm programmer, I have no life !")
 		break
-	
-def fun3():
+#Screen Off
+def off():
 	les5=("Close your eyes")
 	phrase4=speech.input()
 	for phrase4 in les5:
@@ -57,8 +65,8 @@ def fun3():
 		else:
 			None
 		break
-
-def fun4():
+#Open youtube
+def youtube():
 	les7="Open youtube"
 	phrase5=speech.input()
 	for phrase5 in les7:
@@ -68,8 +76,8 @@ def fun4():
 		if exists(f_path):
 			os.system("youtube.bat")
 		break
-	
-def fun5():
+#Open Facebook using bat file 	
+def Facebook():
 	les8="Open Facebook"
 	phrase6=speech.input()
 	for phrase6 in les8:
@@ -79,7 +87,9 @@ def fun5():
 		if exists(f_path):
 			os.system("Facebook.bat")
 		break
-def fun6():
+		
+#Opens Email 
+def Email():
 	les9="Open Email"
 	phrase7=speech.input()
 	for phrase7 in les9:
@@ -92,11 +102,11 @@ def fun6():
 			None
 		break
 		
-fun()
-commands()
-fun1()
-fun2()
-fun3()
-fun4()
-fun5()
-fun6()
+Greeting()
+browser()
+date()
+Joke()
+off()
+youtube()
+Facebook()
+Email()
